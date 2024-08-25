@@ -8,6 +8,8 @@ public class MovablePlatform : MonoBehaviour
     [SerializeField] float moveAmount;
     [SerializeField] float activationDistance;
 
+    [SerializeField] bool travelling;
+
     GameObject player;
     MoveDirection direction;
     Rigidbody rb;
@@ -31,7 +33,14 @@ public class MovablePlatform : MonoBehaviour
 
            if(Input.GetMouseButtonDown(0))
            {
-                Move(direction);
+                if(travelling)
+                {
+
+                }
+                else
+                {
+                   Move(direction);
+                }
            }
         }
         else
@@ -72,6 +81,11 @@ public class MovablePlatform : MonoBehaviour
 
         //rb.AddForce(movementVector * moveAmount, ForceMode.Impulse);
         transform.position += (movementVector * moveAmount);
+    }
+
+    public void Travel()
+    {
+        
     }
 
     void ChangeColor(Color color)
