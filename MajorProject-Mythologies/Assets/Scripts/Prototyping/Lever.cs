@@ -76,7 +76,7 @@ public class Lever : MonoBehaviour
         {
             //leverBody.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / rotationDuration);
             //float xDiff = (endRotation.eulerAngles.x - startRotation.eulerAngles.x) * (elapsedTime / rotationDuration);
-            float xDiff = -0.11f;
+            float xDiff = -0.07f;
             leverBody.transform.rotation *= Quaternion.Euler(xDiff, 0f, 0f);
             elapsedTime += Time.deltaTime;
             yield return null;
