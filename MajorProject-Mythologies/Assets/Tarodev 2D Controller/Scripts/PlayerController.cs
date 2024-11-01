@@ -14,6 +14,7 @@ namespace TarodevController
         private ConstantForce2D _constantForce;
         private Rigidbody2D _rb;
         private PlayerInput _playerInput;
+        public bool idleState = false;
 
         #endregion
 
@@ -173,18 +174,25 @@ namespace TarodevController
 
         private void GatherInput()
         {
-            _frameInput = _playerInput.Gather();
-
-
-            if (_frameInput.JumpDown)
+            if (!idleState)
             {
-                _jumpToConsume = true;
-                _timeJumpWasPressed = _time;
+                _frameInput = _playerInput.Gather();
+
+
+                if (_frameInput.JumpDown)
+                {
+                    _jumpToConsume = true;
+                    _timeJumpWasPressed = _time;
+                }
+
+                if (_frameInput.DashDown)
+                {
+                    _dashToConsume = true;
+                }
             }
-
-            if (_frameInput.DashDown)
+            else
             {
-                _dashToConsume = true;
+                _frameInput = _playerInput.Idle();
             }
         }
 

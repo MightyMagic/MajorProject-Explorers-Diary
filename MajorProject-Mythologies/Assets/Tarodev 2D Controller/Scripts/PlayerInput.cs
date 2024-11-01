@@ -45,6 +45,18 @@ namespace TarodevController
                 Move = new Vector2(Input.GetAxisRaw("Horizontal") + TouchInput.Instance.TouchHorizontal(), Input.GetAxisRaw("Vertical"))
             };
         }
+
+        public FrameInput Idle()
+        {
+            return new FrameInput
+            {
+                JumpDown = false,
+                JumpHeld = false,
+                DashDown = false,
+                Move = new Vector2(0f, 0f)
+
+            };
+        }
 #endif
     }
 
