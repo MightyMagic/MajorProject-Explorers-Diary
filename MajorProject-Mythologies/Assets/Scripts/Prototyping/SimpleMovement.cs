@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SimpleMovement : MonoBehaviour
 {
-    Rigidbody playerRb;
+    Rigidbody2D playerRb;
     [SerializeField] Direction startDirection;
 
     [Header("Movement properties")]
@@ -21,7 +21,7 @@ public class SimpleMovement : MonoBehaviour
 
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+        playerRb = GetComponent<Rigidbody2D>();
         ChangeDirection(Direction.Left, -1);
 
         animator.SetBool("Walking", false);
@@ -84,7 +84,7 @@ public class SimpleMovement : MonoBehaviour
         }
         else
         {
-            playerRb.velocity = new Vector3(0f, playerRb.velocity.y, 0f);//Vector3.zero;
+            //playerRb.velocity = new Vector3(0f, playerRb.velocity.y, 0f);//Vector3.zero;
 
             if (animator.GetBool("Walking"))
             {
@@ -99,7 +99,7 @@ public class SimpleMovement : MonoBehaviour
         timeOfJump = Time.time;
         jumpCount += 1;
 
-        playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        playerRb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void OnCollisionEnter(Collision collision)
