@@ -73926,7 +73926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleState: 0
-  <Stats>k__BackingField: {fileID: 11400000, guid: 8bb88d0c755ea3941bdb714b8fad81dd, type: 2}
+  <Stats>k__BackingField: {fileID: 11400000, guid: 49aad68e87de1b64ba5d3b2f3b674140, type: 2}
   _drawGizmos: 1
 --- !u!50 &3054942121181335251
 Rigidbody2D:
@@ -83901,8 +83901,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.78}
-  m_Size: {x: 0.85999995, y: 1.52}
+  m_Offset: {x: 0, y: 0.75}
+  m_Size: {x: 0.85999995, y: 1.46}
   m_Direction: 0
 --- !u!114 &5731089695931528458
 MonoBehaviour:

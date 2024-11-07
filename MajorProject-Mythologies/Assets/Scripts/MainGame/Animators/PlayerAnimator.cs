@@ -14,21 +14,9 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update()
     {
-        if (LevelManager.Instance.isWindy)
-        {
-            if(animator.GetBool("Blocking") == false)
-            {
-                playerModel.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-                animator.SetBool("Blocking", true);
-            }
-        }
-        else
-        {
-            if (animator.GetBool("Blocking") == true)
-            {
-                animator.SetBool("Blocking", false);
-                playerModel.transform.rotation = Quaternion.Euler(0f, -180f, 0f);
-            }
+       
+
+
 
             if(Mathf.Abs(rb.velocity.x) > 0.5f)
             {
@@ -57,6 +45,6 @@ public class PlayerAnimator : MonoBehaviour
             }
 
 
-        }
+        
     }
 }

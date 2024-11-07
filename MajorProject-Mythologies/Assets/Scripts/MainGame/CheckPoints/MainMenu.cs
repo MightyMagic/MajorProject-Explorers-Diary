@@ -11,4 +11,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
+
+    public void SceneSelect(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
 }

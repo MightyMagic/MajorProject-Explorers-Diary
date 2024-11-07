@@ -11,10 +11,13 @@ public class SpikeTrap : MonoBehaviour
     [SerializeField] Transform respawnPoint;
     [Header("Movement")]
     [SerializeField] bool isMoving;
+    [SerializeField] float initialDelay;
     [SerializeField] float speed;
     [SerializeField] Vector2 direction;
     Rigidbody2D rb;
     Vector2 targetPos;
+
+    float timer = 0f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,7 +27,12 @@ public class SpikeTrap : MonoBehaviour
 
     void Update()
     {
-        if(isMoving)
+        if(timer < initialDelay)
+        {
+            timer += Time.deltaTime;
+        }
+
+        if(isMoving & timer >= initialDelay)
         {
             Move();
         }
