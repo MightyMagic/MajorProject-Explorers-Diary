@@ -14,5 +14,14 @@ public class InteractiveObject : MonoBehaviour
         {
             animator.SetBool("Open", true);
         }
+        else if(actionType == LeverAction.StopTrap)
+        {
+            AxeTrap axeTrap = this.gameObject.GetComponent<AxeTrap>();
+            if(axeTrap != null)
+            {
+                axeTrap.StopRotation();
+                StartCoroutine(axeTrap.ResumeRotation());
+            }
+        }
     }
 }

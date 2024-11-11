@@ -18,14 +18,14 @@ public class PlayerAnimator : MonoBehaviour
 
 
 
-            if(Mathf.Abs(rb.velocity.x) > 0.5f)
+            if(Mathf.Abs(rb.linearVelocity.x) > 0.5f)
             {
                 if (animator.GetBool("Walking") == false)
                 {
                     animator.SetBool("Walking", true);
                 }
 
-                if (rb.velocity.x > 0.2f)
+                if (rb.linearVelocity.x > 0.2f)
                 {
                     playerModel.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
                 }

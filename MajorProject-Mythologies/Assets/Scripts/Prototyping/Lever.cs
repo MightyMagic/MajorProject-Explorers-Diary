@@ -10,17 +10,19 @@ public class Lever : MonoBehaviour
     GameObject player;
     [SerializeField] float activationDistance;
 
-    [SerializeField] InteractiveObject actionTarget;
+    [SerializeField] List<InteractiveObject> actionTargets;
 
     bool playerNear = false;
     bool activated = false;
 
     [SerializeField] TextMeshProUGUI PressMeText;
     [SerializeField] GameObject leverBody;
+
+    [SerializeField] float resetTiming;
     
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerMain");
         PressMeText.text = "Press E";
         PressMeText.gameObject.SetActive(false);
     }
@@ -46,7 +48,7 @@ public class Lever : MonoBehaviour
             }
         }
 
-        if (playerNear & UnityEngine.Input.GetKeyDown(KeyCode.E))
+        if (playerNear & UnityEngine.Input.GetKeyDown(KeyCode.E) & !activated)
         {
             Activate();
         }
@@ -60,8 +62,40 @@ public class Lever : MonoBehaviour
         {
             activated = true;
             StartCoroutine(RotateOverTime(3f));
+
+            // Execute action
+            for (int i = 0; i < actionTargets.Count; i++)
+            {
+                actionTargets[i].TriggerAction();
+            }
+
+            //StartCoroutine(ResetLever());
         }
-        // Execute action
+
+    }
+
+    IEnumerator ResetLever()
+    {
+        yield return new WaitForSeconds(resetTiming);
+
+        Quaternion startRotation = leverBody.transform.rotation;
+        Debug.LogError("Start Rotation is " + leverBody.transform.rotation.eulerAngles.x + " , " + leverBody.transform.rotation.eulerAngles.y + " , " + leverBody.transform.rotation.eulerAngles.z);
+        Quaternion endRotation = Quaternion.Euler(-40f, 90f, 0);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 3f)
+        {
+            //leverBody.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / rotationDuration);
+            //float xDiff = (endRotation.eulerAngles.x - startRotation.eulerAngles.x) * (elapsedTime / rotationDuration);
+            float xDiff = 0.07f;
+            leverBody.transform.rotation *= Quaternion.Euler(xDiff, 0f, 0f);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+            //yield return new WaitForEndOfFrame();
+        }
+
+        PressMeText.gameObject.SetActive(false);
+        leverBody.transform.rotation = endRotation;
         
     }
 
@@ -86,12 +120,34 @@ public class Lever : MonoBehaviour
         PressMeText.gameObject.SetActive(false);
         leverBody.transform.rotation = endRotation;
 
-        actionTarget.TriggerAction();
+        startRotation = leverBody.transform.rotation;
+        Debug.LogError("Start Rotation is " + leverBody.transform.rotation.eulerAngles.x + " , " + leverBody.transform.rotation.eulerAngles.y + " , " + leverBody.transform.rotation.eulerAngles.z);
+        endRotation = Quaternion.Euler(-40f, 90f, 0);
+        elapsedTime = 0f;
+
+        while (elapsedTime < 3f)
+        {
+            //leverBody.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / rotationDuration);
+            //float xDiff = (endRotation.eulerAngles.x - startRotation.eulerAngles.x) * (elapsedTime / rotationDuration);
+            float xDiff = 0.07f;
+            leverBody.transform.rotation *= Quaternion.Euler(xDiff, 0f, 0f);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+            //yield return new WaitForEndOfFrame();
+        }
+
+        PressMeText.gameObject.SetActive(false);
+        leverBody.transform.rotation = endRotation;
+
+        activated = false;
+
+        //actionTarget.TriggerAction();
     }
 }
 
 public enum LeverAction
 {
     UnlockDoor,
+    StopTrap,
     None
 }

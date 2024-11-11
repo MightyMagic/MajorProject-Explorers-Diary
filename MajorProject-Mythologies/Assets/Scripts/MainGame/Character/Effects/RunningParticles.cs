@@ -20,7 +20,7 @@ public class RunningParticles : MonoBehaviour
     void Update()
     {
         // Check if the Rigidbody's x speed is greater than 0
-        bool isMoving = Mathf.Abs(rb.velocity.x) > 1f;
+        bool isMoving = Mathf.Abs(rb.linearVelocity.x) > 1f;
 
         // Check if the character is grounded using a Raycast
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, groundLayer); 

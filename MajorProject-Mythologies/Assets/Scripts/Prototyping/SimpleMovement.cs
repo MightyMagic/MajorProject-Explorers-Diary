@@ -43,7 +43,7 @@ public class SimpleMovement : MonoBehaviour
         if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.3f)
         {
             Vector3 vel = transform.forward * speed * (-1);
-            playerRb.velocity = new Vector3(vel.x, playerRb.velocity.y, vel.z);
+            playerRb.linearVelocity = new Vector3(vel.x, playerRb.linearVelocity.y, vel.z);
 
             if (!animator.GetBool("Walking"))
             {

@@ -28,7 +28,7 @@ public class ArrowProjectile : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = transform.up * speed * direction;
+        rb.linearVelocity = transform.up * speed * direction;
     }
 
     private void OnTriggerEnter(Collider other)
