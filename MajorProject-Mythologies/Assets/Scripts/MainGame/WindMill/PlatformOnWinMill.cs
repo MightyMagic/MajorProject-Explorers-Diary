@@ -18,6 +18,6 @@ public class PlatformOnWinMill : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rigidBody.velocity = _pivot.position - transform.position;
+        _rigidBody.linearVelocity = _pivot.position - transform.position;
     }
 }

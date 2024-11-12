@@ -214,13 +214,13 @@ namespace TarodevController
 
             _hasInputThisFrame = _frameInput.Move.x != 0;
 
-            Velocity = _rb.velocity;
+            Velocity = _rb.linearVelocity;
             _trimmedFrameVelocity = new Vector2(Velocity.x, 0);
         }
 
         private void RemoveTransientVelocity()
         {
-            var currentVelocity = _rb.velocity;
+            var currentVelocity = _rb.linearVelocity;
             var velocityBeforeReduction = currentVelocity;
 
             currentVelocity -= _totalTransientVelocityAppliedLastFrame;
@@ -745,7 +745,7 @@ namespace TarodevController
         {
             if (_forceToApplyThisFrame != Vector2.zero)
             {
-                _rb.velocity += AdditionalFrameVelocities();
+                _rb.linearVelocity += AdditionalFrameVelocities();
                 _rb.AddForce(_forceToApplyThisFrame * _rb.mass, ForceMode2D.Impulse);
 
                 // Returning provides the crispest & most accurate jump experience
@@ -767,7 +767,7 @@ namespace TarodevController
                 if (_frameInput.Move.y != 0) wallVelocity = _frameInput.Move.y * Stats.WallClimbSpeed;
                 else wallVelocity = Mathf.MoveTowards(Mathf.Min(Velocity.y, 0), -Stats.WallClimbSpeed, Stats.WallFallAcceleration * _delta);
 
-                SetVelocity(new Vector2(_rb.velocity.x, wallVelocity));
+                SetVelocity(new Vector2(_rb.linearVelocity.x, wallVelocity));
                 return;
             }
 
@@ -847,7 +847,7 @@ namespace TarodevController
                 }
 
                 var targetX = Mathf.MoveTowards(_trimmedFrameVelocity.x, xDir.x * targetSpeed, step);
-                newVelocity = new Vector2(targetX, _rb.velocity.y);
+                newVelocity = new Vector2(targetX, _rb.linearVelocity.y);
             }
 
             SetVelocity((newVelocity + AdditionalFrameVelocities()) * _currentFrameSpeedModifier);
@@ -866,7 +866,7 @@ namespace TarodevController
 
         private void SetVelocity(Vector2 newVel)
         {
-            _rb.velocity = newVel;
+            _rb.linearVelocity = newVel;
             Velocity = newVel;
         }
 

@@ -26,7 +26,7 @@ public class MovingPlatform : MonoBehaviour
         {
             Vector3 vel = (-rb.position + platforms[currentIndex].position).normalized * speed;
 
-            rb.velocity = vel;
+            rb.linearVelocity = vel;
         }
         else
         {

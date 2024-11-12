@@ -11,7 +11,7 @@ public class Respawn : MonoBehaviour
 
         //this.gameObject.GetComponent<SimpleMovement>().enabled = false;
         this.gameObject.transform.position = respawnPoint.position;
-        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
         yield return new WaitForSeconds(1f);
 

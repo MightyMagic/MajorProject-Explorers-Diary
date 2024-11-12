@@ -39,10 +39,10 @@ namespace TarodevController
         {
             return new FrameInput
             {
-                JumpDown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.C) || TouchInput.Instance.IsTouchJumpPressed(),
-                JumpHeld = Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.C) || TouchInput.Instance.IsTouchJumpHeld(),
+                JumpDown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.C), // TouchInput.Instance.IsTouchJumpPressed(),
+                JumpHeld = Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.C), // TouchInput.Instance.IsTouchJumpHeld(),
                 DashDown = Input.GetKeyDown(KeyCode.X), //|| Input.GetMouseButtonDown(1),
-                Move = new Vector2(Input.GetAxisRaw("Horizontal") + TouchInput.Instance.TouchHorizontal(), Input.GetAxisRaw("Vertical"))
+                Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
             };
         }
 
