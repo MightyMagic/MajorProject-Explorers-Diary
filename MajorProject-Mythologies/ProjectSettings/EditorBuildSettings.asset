@@ -17,4 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainGame/Prototype1WorkInProgress.unity
     guid: 728055846976b0947b6e647d1fbfcce6
+  - enabled: 1
+    path: Assets/Scenes/MainGame/FallGuys.unity
+    guid: a7a422ed7a795a8408bb29d2057adac9
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
