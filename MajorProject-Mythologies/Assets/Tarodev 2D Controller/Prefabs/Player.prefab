@@ -4864,6 +4864,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9694,6 +9697,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14583,6 +14589,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19471,6 +19480,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19604,6 +19616,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -19701,161 +19714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57964bbe0bcaa6f4db2cae787cab607f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anim: {fileID: 3054942120714206838}
-  _effectsParent: {fileID: 4279591914954755471}
-  _trailRenderer: {fileID: 3054942121443606467}
-  _sprite: {fileID: 3054942120714206837}
-  _trail: {fileID: 3054942121443606466}
-  _jumpParticles: {fileID: 3054942119893454503}
-  _launchParticles: {fileID: 3054942121060292280}
-  _moveParticles: {fileID: 3054942119837435221}
-  _landParticles: {fileID: 3054942121100908041}
-  _doubleJumpParticles: {fileID: 3054942119778330331}
-  _dashParticles: {fileID: 3054942120786680124}
-  _dashRingParticles: {fileID: 3054942120025842297}
-  _dashRingTransform: {fileID: 3054942120045712701}
-  _doubleJumpClip: {fileID: 8300000, guid: 0d11fd7368b306b4c900241e3dadf28f, type: 3}
-  _dashClip: {fileID: 8300000, guid: 6d2d16f85c087ea419d323141cd2145c, type: 3}
-  _jumpClips:
-  - {fileID: 8300000, guid: 3400b2f34e04a3e4d85922008ffe6471, type: 3}
-  - {fileID: 8300000, guid: 4451a35363e4a4442a4bf908b82fbb60, type: 3}
-  - {fileID: 8300000, guid: 6a74753799aba214d82d177b0de5315a, type: 3}
-  - {fileID: 8300000, guid: df5ee7bb125a4ff48a14a4004106b274, type: 3}
-  - {fileID: 8300000, guid: 26177ad1fcf9c2b4ca273f805214b9fe, type: 3}
-  _splats:
-  - {fileID: 8300000, guid: 5d94063f45167b04ab62585e436da58c, type: 3}
-  - {fileID: 8300000, guid: b5803c17557c59c40bf3a6d69cb46cb3, type: 3}
-  - {fileID: 8300000, guid: 1876767bf7cbf284394dc3817af9593c, type: 3}
-  _slideClips:
-  - {fileID: 8300000, guid: 8fdca7d062c9999429d95ab7c56a5986, type: 3}
-  - {fileID: 8300000, guid: b18b6bd081c46eb48890d12e052cbbd9, type: 3}
-  - {fileID: 8300000, guid: a42ad5ad97b59d042bb11c6713a26100, type: 3}
-  _wallGrabClip: {fileID: 8300000, guid: 9c4b2bf8e30a90a4a95c5285a6e8e6f7, type: 3}
-  _squishMinMaxX:
-    m_Mode: 2
-    m_CurveMultiplier: 1
-    m_CurveMin:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.1
-        inSlope: 1.8339472
-        outSlope: 1.8339472
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.024949715
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_CurveMax:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.05
-        inSlope: 0.69084835
-        outSlope: 0.69084835
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.060004596
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_ConstantMin: 0
-    m_ConstantMax: 0
-  _squishMinMaxY:
-    m_Mode: 2
-    m_CurveMultiplier: 1
-    m_CurveMin:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.98
-        inSlope: -1.2740425
-        outSlope: -1.2740425
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.010956176
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_CurveMax:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.98
-        inSlope: -0.42974222
-        outSlope: -0.42974222
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.025896415
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_ConstantMin: 0
-    m_ConstantMax: 0
-  _minSquishForce: 6
-  _maxSquishForce: 30
-  _minSquishDuration: 0.25
-  _maxSquishDuration: 0.4
-  _wallSlideParticles: {fileID: 8629632398674961167}
-  _wallSlideSource: {fileID: 5970203659758147100}
-  _wallClimbClips:
-  - {fileID: 8300000, guid: be5f0f8c427cac44e8387eef0a889fa5, type: 3}
-  - {fileID: 8300000, guid: 3f6ea2c296043f0439d1508b8f7605e1, type: 3}
-  _ladderClimbClips:
-  - {fileID: 8300000, guid: 4c990be3367ff04498b7cb54e948e244, type: 3}
-  - {fileID: 8300000, guid: a3d5971d8fe70fe4dad7904bbf632dfb, type: 3}
-  _maxWallSlideVolume: 0.4
-  _wallSlideParticleOffset: 0.3
-  _distancePerClimbSound: 1
-  _maxIdleSpeed: 2
-  _runningTilt: 7
-  _maxTilt: 45
-  _tiltSmoothTime: 0.1
 --- !u!1 &3054942120541986084
 GameObject:
   m_ObjectHideFlags: 0
@@ -19904,11 +19762,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89b8855ab650ac489f1f1b5f2a94751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleState: 0
   <Stats>k__BackingField: {fileID: 11400000, guid: 894dfe33661263b42a8e1490d64c0424, type: 2}
   _drawGizmos: 1
 --- !u!50 &3054942120541986088
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -19919,8 +19778,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: a081f785d315a2b43966f129ce852878, type: 2}
   m_IncludeLayers:
@@ -19941,6 +19800,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3054942120541986084}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: a081f785d315a2b43966f129ce852878, type: 2}
   m_IncludeLayers:
@@ -19964,7 +19824,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.65000004}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -19975,7 +19836,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.79999995, y: 0.19999999}
   m_EdgeRadius: 0.05
 --- !u!70 &5731089695359280883
@@ -19986,6 +19846,7 @@ CapsuleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3054942120541986084}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: a081f785d315a2b43966f129ce852878, type: 2}
   m_IncludeLayers:
@@ -20009,9 +19870,10 @@ CapsuleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.675}
-  m_Size: {x: 0.85999995, y: 1.3100001}
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.75}
+  m_Size: {x: 0.85999995, y: 1.46}
   m_Direction: 0
 --- !u!1 &3054942120628204824
 GameObject:
@@ -20101,10 +19963,13 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20138,7 +20003,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &3054942120714206838
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -20152,6 +20017,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -24931,6 +24797,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29819,6 +29688,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -34707,6 +34579,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -34813,6 +34688,9 @@ TrailRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -34986,6 +34864,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9caa3180eb0ca104ea0b10b83724a550, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9caa3180eb0ca104ea0b10b83724a550, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -39845,6 +39724,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
