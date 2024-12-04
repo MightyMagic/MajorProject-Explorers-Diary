@@ -22,20 +22,20 @@ public class InputListener : MonoBehaviour
     
     void Update()
     {
-        xInput = Input.GetAxis("Horizontal");
+        xInput = -Input.GetAxis("Horizontal");
         
 
-        if(Mathf.Abs(xInput) > 0.3f)
+        if(Mathf.Abs(xInput) > 0.05f)
         {
             animator.SetBool("moving", true);
 
-            if(xInput > 0.1f & !left)
+            if(xInput > 0.05f & !left)
             {
                 left = true;
                 Debug.LogError("Turning left!");
                 this.transform.rotation = Quaternion.Euler(leftRotation);
             }
-            else if(xInput < -0.1f & left)
+            else if(xInput < -0.05f & left)
             {
                 left = false;
                 Debug.LogError("Turning right");
