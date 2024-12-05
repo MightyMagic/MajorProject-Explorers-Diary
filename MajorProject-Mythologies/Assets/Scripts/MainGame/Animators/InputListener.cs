@@ -5,6 +5,14 @@ public class InputListener : MonoBehaviour
     Animator animator;
 
     float xInput;
+    
+
+    bool IsGrounded = true;
+
+    private Vector2 rayOriginOffset = Vector2.zero;
+    [SerializeField] private float rayLength = 5f;
+    [SerializeField] private LayerMask groundLayer;
+
     Vector3 leftRotation;
     Vector3 rightRotation;
 
@@ -46,6 +54,32 @@ public class InputListener : MonoBehaviour
         {
             animator.SetBool("moving", false);
         }
+
+        CheckGrounded();
+
+        if(Input.GetButtonDown("Jump") && IsGrounded)
+        {
+            animator.SetBool("Jumping", true);
+        }
+
+       
+
+        
+    }
+
+    private void CheckGrounded()
+    {
+        Vector2 rayOrigin = (Vector2)transform.position + rayOriginOffset; // Calculate ray origin with offset
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, groundLayer);
+
+        // Perform the raycast
+        //IsGrounded = Physics.Raycast(ray, rayLength, groundLayer);
+        IsGrounded = hit.collider != null;
+
+        // Debugging (optional): Visualize the ray in the Scene view
+        Debug.DrawRay(rayOrigin, Vector3.down * rayLength, IsGrounded ? Color.green : Color.red);
+
+        animator.SetBool("Grounded", IsGrounded);
     }
 
 
