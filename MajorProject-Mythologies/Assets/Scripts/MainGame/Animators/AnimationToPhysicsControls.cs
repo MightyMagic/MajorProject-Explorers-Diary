@@ -7,7 +7,13 @@ public class AnimationToPhysicsControls : MonoBehaviour
     Rigidbody2D body;
 
     [SerializeField] float speed;
+    [SerializeField] float airSpeed;
+    [SerializeField] InputListener inputListener;
+
+    [Header("Jump")]
     [SerializeField] float jumpForce;
+    [SerializeField] float gravityScaleDown;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -21,11 +27,13 @@ public class AnimationToPhysicsControls : MonoBehaviour
         {
             body.linearVelocity = new Vector2(velocity.x * speed, body.linearVelocityY);
         }
-
-       // if((Mathf.Abs(velocity.y) > 0f))
-       // {
-       //     body.linearVelocity = new Vector2(body.linearVelocityX, velocity.y * speed);
-       // }
+        else
+        {
+            if (!animator.GetBool("Grounded"))
+            {
+                body.linearVelocity = new Vector2(-inputListener.XInput() * airSpeed, body.linearVelocityY);
+            }
+        }
 
         body.interpolation = RigidbodyInterpolation2D.Interpolate;
     }
@@ -36,6 +44,7 @@ public class AnimationToPhysicsControls : MonoBehaviour
 
     public void BeginJump()
     {
+        body.linearVelocity = new Vector2 (velocity.x, 0f);
         body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         animator.SetBool("Jumping", false);
         body.gravityScale = 0f;
@@ -43,6 +52,6 @@ public class AnimationToPhysicsControls : MonoBehaviour
 
     public void EndJump()
     {
-        body.gravityScale = 3f;
+        body.gravityScale = gravityScaleDown;
     }
 }

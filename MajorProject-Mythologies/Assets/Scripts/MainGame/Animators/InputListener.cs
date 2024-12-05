@@ -57,14 +57,21 @@ public class InputListener : MonoBehaviour
 
         CheckGrounded();
 
-        if(Input.GetButtonDown("Jump") && IsGrounded)
+        if(Input.GetButtonDown("Jump"))
         {
-            animator.SetBool("Jumping", true);
+            if (IsGrounded)
+            {
+                animator.SetBool("Jumping", true);
+
+            }
+
+            animator.SetInteger("JumpCounter", animator.GetInteger("JumpCounter") + 1);
         }
+    }
 
-       
-
-        
+    public float XInput()
+    {
+        return xInput;
     }
 
     private void CheckGrounded()
@@ -80,7 +87,13 @@ public class InputListener : MonoBehaviour
         Debug.DrawRay(rayOrigin, Vector3.down * rayLength, IsGrounded ? Color.green : Color.red);
 
         animator.SetBool("Grounded", IsGrounded);
+
+        //if(IsGrounded)
+        //{
+        //    if (animator.GetInteger("JumpCounter") > 0)
+        //    {
+        //        animator.SetInteger("JumpCounter", 0);
+        //    }
+        //}
     }
-
-
 }
