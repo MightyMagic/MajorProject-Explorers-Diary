@@ -15,6 +15,15 @@ public class GameOverSequence : MonoBehaviour
         DisableAll();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && dyingMesh.gameObject.activeInHierarchy)
+        {
+            StopCoroutine(GameOverCoroutine());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
 
     void DisableAll()
     {
