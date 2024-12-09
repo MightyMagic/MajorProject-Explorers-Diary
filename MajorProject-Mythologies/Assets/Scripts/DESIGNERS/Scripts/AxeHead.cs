@@ -10,7 +10,8 @@ public class AxeHead : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             // Die
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            collision.gameObject.GetComponent<GameOverSequence>().GameOver();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
